@@ -1,0 +1,6 @@
+Development notes:
+- TODO: Toggle visibility: https://css-tricks.com/exposing-form-fields-radio-button-css/
+
+2019-04-18 (Thursday):
+- Start roughing out HTML
+- Start adding input elements

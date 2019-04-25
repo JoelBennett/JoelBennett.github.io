@@ -1,33 +1,98 @@
 <html>
   <head>
     <title>EV Cost Calculator</title>
+    <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
-    Inputs:
-    - Current vehicle:
-      - Resale value (if selling current vehicle)
-      - Fuel costs:
-        - Calculate based on km driven * fuel economy * cost per L
-        - OR annual fuel cost
-        - OR 
-      - Oil changes per year
-        - Based on km driven (every 5,000 km)
-      - Insurance costs
-      - Registration costs
-      - Other annual maintenance (yearly cost)
-    - Future vehicle:
-      - Vehicle purchase price (or monthly lease cost)
-      - Energy costs:
-        - km driven * vehicle efficiency (load from json based on EPA numbers?) * cost per kWh
-        - OR: amount of free charging?
-      - Insurance costs
-      - Registration costs (depends on state - some states have higher registration fees for EVs)
-    - Calculate annual cost for each vehicle - find crossover month
-    - Big disclaimer about assumptions
-    - Assumptions:
-      - EV maintenance costs will likely be lower than comparable ICE vehicle
-      - Some free charging may be available depending on workplace conditions, local business, etc.
-        - (Free charging should not be abused, though!)
-      - 
+    <h1>Welcome to the EV calculator!</h1>
+    <p>The purpose of this site is to determine the point in time at which switching over to an EV (electric vehicle) makes economic sense.</p>
+    <p>This will only give an approximate date, and it make make sense to switch to an EV sooner (or later) for other reasons.</p>
+    <div>
+      <h2>Current Costs</h2>
+      <div>
+        <h3>Current Resale Value</h3>
+        <p>Do you plan on selling your current vehicle?</p>
+          <div>
+            <input id="sellCurrentVehicleYes" type="radio" name="sellCurrentVehicle" value="yes" title="yes" checked>
+            <label for="sellCurrentVehicleYes">Yes</label>
+            <div class="reveal-if-active">
+                <p>What is the current resale value of the vehicle that you currently drive?  (e.g.: If you were to sell it, how much could you reasonably expect to get for it).</p>
+                <input type="number" name="currentResaleValue" />
+                <br />
+            </div>
+            <input id="sellCurrentVehicleNo" type="radio" name="sellCurrentVehicle" value="no" title="no">
+            <label for="sellCurrentVehicleNo">No</label>
+          </div>
+      </div>
+      <div>
+        <h3>Fuel Costs</h3>
+        <p>Calculate based on km driven * fuel economy * cost per litre</p>
+        <p>Monthly fuel cost</p>
+        <p>Annual fuel cost</p>
+      </div>
+      <div>
+        <h3>Oil Changes</h3>
+        <p>(depends on frequency of changes * cost per change (divided by km driven per month)</p>
+      </div>
+      <div>
+        <h3>Insurance</h3>
+        <p>Current annual insurance cost</p>
+      </div>
+      <div>
+        <h3>Registration</h3>
+        <p>Current annual registration costs.</p>
+      </div>
+      <div>
+        <h3>Other annual maintenance (including maintenance)</h3>
+        <p>Other annual costs not accounted for under other categories</p>
+      </div>
+    </div>
+    <div>
+        <h2>EV Costs</h2>
+        <div>
+          <h3>Selected vehicle</h3>
+          <p>Pick it here or enter an MPGe. (or km driven * kw per km)</p>
+        </div>
+        <div>
+          <h3>Purchse price (or monthly lease price)</h3>
+          <p>What is the purchase price or monthly lease cost of the vehicle you plan on getting?</p>
+        </div>
+        <div>
+          <h3>Electricty costs</h3>
+          <p>Price per kWh.</p>
+          <p>Charging efficiency (80%?)</p>
+          <p>km driven * vehicle efficiency (load from json based on EPA numbers?) * cost per kWh</p>
+          <p>Amount of free charging (e.g.: do you get free charging at work?)</p>
+        </div>
+        <div>
+          <h3>Insurance costs</h3>
+          <p>Annual insurance costs may be higher for a newer vehicle</p>
+        </div>
+        <div>
+          <h3>Registration costs</h3>
+          <p>Some states have higher registration costs for EVs and hybrids</p>
+        </div>
+        <div>
+          <h3>Home charger installation</h3>
+          <p>May want to include the cost of installing a level 2 (220 v) charger at home.</p>
+        </div>
+    </div>
+    <div>
+      <h2>Results</h2>
+      <p>Calculate annual cost for each vehicle - find crossover month</p>
+      <h3>Disclaimer:</h3>>
+      <p>No calculator will be perfect.  This calculator makes a number of assumptions:
+        <ul>
+          <li>
+            EV maintenance costs are significantly lower than internal combustion engines, but still not entirely $0.
+            For example, brake pad replacements on the Nissan Leaf are much less frequent because of regenerative braking,
+            which doesn't use the brake pads.
+          </li>
+          <li>
+            Some businesses and employers offer free charging.  This may also reduce energy costs to the EV owner.
+          </li>
+        </ul>
+      </p>
+    </div>
   </body>
 </html>
