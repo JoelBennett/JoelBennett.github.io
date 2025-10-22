@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Base64 encoder/decoder</title>
+    <link rel="stylesheet" href="convert.css">
+  </head>
+  <body>
+    <H1 class="heading">Base64 Converter</H1>
+    <div class="container">
+      <div class="leftSide">
+        <textarea id="leftText" class="textArea" rows="10"></textarea>
+        <input type="button" value="Copy" onclick="copyToClipBoard('leftText')">
+        <input type="button" value="Paste" onclick="pasteFromClipBoard('leftText')">
+      </div>
+      
+      <div class="buttonArea">
+        <div class="buttonContainer">
+          <input type="button" class="individualButton" value="Encode &#8594;" onclick="encode()">
+          <input type="button" class="individualButton" value="&#8592; Decode" onclick="decode()">
+          <label id="message" class="errorMessage"></label>
+        </div>  
+      </div>
+      
+      <div class="rightSide">
+        <textarea id="rightText" class="textArea" rows="10"></textarea>
+        <input type="button" value="Copy" onclick="copyToClipBoard('rightText')">
+        <input type="button" value="Paste" onclick="pasteFromClipBoard('rightText')">
+      </div>
+    </div>
+    <div class="recentValuesSection">
+      <h2>Recent values:</h2>
+      <div id="recentValues" class="recentValues"></div>
+      <input type="button" value="Clear" onclick="clearRecentValues()">
+    </div>
+    <script src="convert.js"></script>
+  </body>
+</html>
